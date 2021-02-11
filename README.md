@@ -1,9 +1,15 @@
 # pt_parse
 
-A simple disk image partition table parser that supports both MBR and GPT types. Output can be both verbose and CSV machine readable (default) - useful for pulling disk image layouts into a processing pipeline.
+A simple disk image partition table parser that supports both MBR and GPT types. Output can be both verbose and CSV machine readable (default) - useful for pulling disk image layouts into a processing pipeline. The non-verbose and "Generalized Layout" display both MBR and GPT data in the same format for simplified downstream parsing.
 
 ## Sample Output
 ```
+./pt_parse ./test_gpt.img 
+512,51199488,GPT,Unknown
+11534336,39648768,Microsoft reserved,Unknown
+1048576,10485760,Microsoft basic data,Unknown
+
+
 ./pt_parse -v test_gpt.img
 
 Partition Table Parser
